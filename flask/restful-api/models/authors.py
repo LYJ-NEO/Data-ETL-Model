@@ -10,7 +10,7 @@ class Author(db.Model):
 
     __tablename__ = 'authors'
 
-    id = db.Column(db.Integer , primary_key=True ,autoincrement=True)
+    id = db.Column(db.Integer , primary_key=True )
     first_name = db.Column(db.String(20))
     last_name  = db.Column(db.String(20))
     created = db.Column( db.DateTime , server_default=db.func.now() )
@@ -26,7 +26,7 @@ class Author(db.Model):
         db.session.commit()
         return self
 
-class AuthorSchme(ModelSchema):
+class AuthorSchmea(ModelSchema):
     class AuthorMeta(ModelSchema.Meta):
         model = Author
         sqla_session = db.session

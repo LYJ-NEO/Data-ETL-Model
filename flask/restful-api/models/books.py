@@ -12,16 +12,12 @@ from marshmallow import fields
 
 
 class Book(db.Model):
-"""
-    定义books表的ORM
-"""
 
     __tablename__ = 'books'     # 定义表名
-
-    id = db.Column(db.Integer, primary_key = True , autoincreament = True)    # 自增长主键
+    id = db.Column(db.Integer, primary_key = True )    # 自增长主键
     title = db.Column(db.String(50))        # Book Title
-    year  = db.Column(db.Interger) 
-    author_id = db.Column( db.Interger , db.ForeignKey('authors.id') , nullable = False)
+    year  = db.Column(db.Integer) 
+    author_id = db.Column( db.Integer , db.ForeignKey('authors.id') , nullable = False)
 
     def __init__(self , title , year , author_id = None):
         self.title = title 
@@ -34,9 +30,6 @@ class Book(db.Model):
         return self
 
 class BookSchema(ModelSchema):
-"""
-    定义Book ORM的Schema
-"""
     class Meta(ModelSchema.Meta):
         model = Book 
         sqla_session = db.session
