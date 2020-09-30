@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 #------------------------------------------------------------------
@@ -12,9 +11,8 @@ from marshmallow import fields
 
 
 class Book(db.Model):
-
-    __tablename__ = 'books'     # 定义表名
-    id = db.Column(db.Integer, primary_key = True )    # 自增长主键
+    __tablename__ = 'books'    
+    id = db.Column(db.Integer,primary_key = True,autoincrement=True)   
     title = db.Column(db.String(50))        # Book Title
     year  = db.Column(db.Integer) 
     author_id = db.Column( db.Integer , db.ForeignKey('authors.id') , nullable = False)

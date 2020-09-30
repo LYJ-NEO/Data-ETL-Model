@@ -32,7 +32,7 @@ class ProductionConfig(Config):
 # 开发环境配置
 class DevelopmentConfig(Config):
     DEBUG = True 
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///D:\\test.db' 
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///D:\\test2.db' 
     SQLALCHEMY_ECHO = False
     JWT_SECRET_KEY = 'JWT-SECRET'
     SECRET_KEY= 'SECRET-KEY'
@@ -42,7 +42,7 @@ class DevelopmentConfig(Config):
 class TestingConfig(Config):
     TESTING = True
     SQLALCHEMY_ECHO = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///D:\\test.db' 
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///D:\\test2.db' 
     SQLALCHEMY_ECHO = False
     JWT_SECRET_KEY = 'JWT-SECRET'
     SECRET_KEY= 'SECRET-KEY'
