@@ -1,0 +1,5 @@
+1 添加itsdangerous库用于加密Token
+
+2 添加flask-mail添加邮箱验证
+
+3 对应的user表结构进行修改
